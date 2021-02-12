@@ -1,0 +1,50 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+</head>
+
+<body>
+    <form action="" method="post">
+        <input type="number" placeholder="Search" name="search">
+        <button type="submit" name="submit">Search</button>
+    </form>
+</body>
+
+</html>
+<?php
+
+
+if (isset($_POST['submit'])) {
+    $searchValue = $_POST['search'];
+    $con = new mysqli("localhost", "root", "", "testing");
+    if ($con->connect_error) {
+        echo "connection Failed: " . $con->connect_error;
+    } else {
+        $sql = "SELECT * FROM patient_info WHERE ID = '%$searchValue%'";
+
+        $result = $con->query($sql);
+        while ($row = $result->fetch_assoc()) {
+            echo $row['Age'] . "<br>";
+            echo $row['Gender'] . "<br>";
+            echo $row['Chest Pain'] . "<br>";
+            echo $row['RestingBP'] . "<br>";
+	    echo $row['CholestrolLevel'] . "<br>";
+            echo $row['FastingBloodSugar'] . "<br>";
+            echo $row['RestingECG'] . "<br>";
+            echo $row['MaxHeartRateAchieved'] . "<br>";
+	    echo $row['ExcerciseInducedEngina'] . "<br>";
+            echo $row['STDepression'] . "<br>";
+            echo $row['Slope'] . "<br>";
+            echo $row['CA'] . "<br>";
+	    }
+
+      
+    }   
+}
+
+
+
+?>

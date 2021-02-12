@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Heart_Health_Prediction</title>
+	<!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+		<div id="brandname">
+			Patients's Heart health prediction
+		</div>
+		<h2>Heart Attack Prediction using Patients data</h2>
+		
+	</div>
+	</header>
+	<div class="PatientData">
+		<form action="addpatient.php" method="post">
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p>Enter Your Age</p>
+		<!-- <input type="number" name="Age"/> -->
+		<textarea name="Age" rows="1" cols=""></textarea>
+		<p>Enter Your Gender (M=0 and F =1)</p>
+		<!-- <input type="number" name="Gender"/> -->
+		<textarea name="Gender" rows="1" cols=""></textarea>
+		<p>Enter Your Chest Pain type (if any) Value [0,3]</p>
+		<!-- <input type="number" name="ChestPain"/> -->
+		<textarea name="Chest Pain" rows="1" cols=""></textarea>
+		<p>Enter Your resting Blood Pressure</p>
+		<!-- <input type="number" name="restbps"/> -->
+		<textarea name="RestingBP" rows="1" cols=""></textarea>
+		<p>Enter Your cholestrol level (serum cholestoral in mg/dl)</p>
+		<!-- <input type="number" name="Clevel"/> -->
+		<textarea name="cholestrol level" rows="1" cols=""></textarea>
+		<p>Enter Your Fasting Blood Sugar</p>
+		<!-- <input type="number" name="FBS"/> -->
+		<textarea name="Fasting Blood Sugar" rows="1" cols=""></textarea>
+		<p>Enter Your resting electrocardiographic results (0= normal and 1 = Not normal)</p>
+		<!-- <input type="number" name="Age"/> -->
+		<textarea name="RestECG" rows="1" cols=""></textarea>
+		<p>Enter Your Max Heart Rate achieved</p>
+		<!-- <input type="number" name="MaxHeartRate"/> -->
+		<textarea name="Max Heart Rate" rows="1" cols=""></textarea>
+		<p>Enter Your exercise induced angina (0 or 1)</p>
+		<!-- <input type="number" name="exerciseinducedangina"/> -->
+		<textarea name="exercise induced angina" rows="1" cols=""></textarea>
+		<p>Enter Your ST depression induced by exercise relative to rest</p>
+		<!-- <input type="number" name="std"/> -->
+		<textarea name="ST depression induced by exercise relative to rest" rows="1" cols=""></textarea>
+		<p>Enter Your the slope of the peak exercise ST segment (1 for up, 2 for flat and 3 for down sloping)</p>
+		<!-- <input type="number" name="slope"/> -->
+		<textarea name="slope" rows="1" cols=""></textarea>
+		<p>Enter Your number of major vessels (0-3) colored by flourosopy</p>
+		<!-- <input type="number" name="Ca"/> -->
+		<textarea name="Ca" rows="1" cols=""></textarea>
+		<p>Enter Your thal 3 for normal, 6 for fixed defect, 7 for reversible defect</p>
+		<!-- <input type="number" name="Thal"/> -->
+		<textarea name="Thal" rows="1" cols=""></textarea>
+
+		<br/>
+		
+		<input type="submit" class="btn-info" value="Save Data">
+		</form>
+
+	<div class="ml-container">
+
+		<form action="{{ url_for('predict')}}" method="POST">
+		<p>Enter Your Age</p>
+		<!-- <input type="number" name="Age"/> -->
+		<textarea name="Age" rows="1" cols=""></textarea>
+		<p>Enter Your Gender (M=0 and F =1)</p>
+		<!-- <input type="number" name="Gender"/> -->
+		<textarea name="Gender" rows="1" cols=""></textarea>
+		<p>Enter Your Chest Pain type (if any) Value [0,3]</p>
+		<!-- <input type="number" name="ChestPain"/> -->
+		<textarea name="Chest Pain" rows="1" cols=""></textarea>
+		<p>Enter Your resting Blood Pressure</p>
+		<!-- <input type="number" name="restbps"/> -->
+		<textarea name="RestingBP" rows="1" cols=""></textarea>
+		<p>Enter Your cholestrol level (serum cholestoral in mg/dl)</p>
+		<!-- <input type="number" name="Clevel"/> -->
+		<textarea name="cholestrol level" rows="1" cols=""></textarea>
+		<p>Enter Your Fasting Blood Sugar</p>
+		<!-- <input type="number" name="FBS"/> -->
+		<textarea name="Fasting Blood Sugar" rows="1" cols=""></textarea>
+		<p>Enter Your resting electrocardiographic results (0= normal and 1 = Not normal)</p>
+		<!-- <input type="number" name="Age"/> -->
+		<textarea name="RestECG" rows="1" cols=""></textarea>
+		<p>Enter Your Max Heart Rate achieved</p>
+		<!-- <input type="number" name="MaxHeartRate"/> -->
+		<textarea name="Max Heart Rate" rows="1" cols=""></textarea>
+		<p>Enter Your exercise induced angina (0 or 1)</p>
+		<!-- <input type="number" name="exerciseinducedangina"/> -->
+		<textarea name="exercise induced angina" rows="1" cols=""></textarea>
+		<p>Enter Your ST depression induced by exercise relative to rest</p>
+		<!-- <input type="number" name="std"/> -->
+		<textarea name="ST depression induced by exercise relative to rest" rows="1" cols=""></textarea>
+		<p>Enter Your the slope of the peak exercise ST segment (1 for up, 2 for flat and 3 for down sloping)</p>
+		<!-- <input type="number" name="slope"/> -->
+		<textarea name="slope" rows="1" cols=""></textarea>
+		<p>Enter Your number of major vessels (0-3) colored by flourosopy</p>
+		<!-- <input type="number" name="Ca"/> -->
+		<textarea name="Ca" rows="1" cols=""></textarea>
+		<p>Enter Your thal 3 for normal, 6 for fixed defect, 7 for reversible defect</p>
+		<!-- <input type="number" name="Thal"/> -->
+		<textarea name="Thal" rows="1" cols=""></textarea>
+
+		<br/>
+		
+		<input type="submit" class="btn-info" value="predict">
+		<a href="patients_record.html">
+       		View Patients Record </a>
+		
+	</form>
+		
+	</div>
+
+	
+	
+
+</body>
+</html>
